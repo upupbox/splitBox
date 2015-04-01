@@ -1,0 +1,67 @@
+<h1><code ng:non-bindable="">splitBox</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">splitbox</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="splitbox-directive-page splitbox-directive-splitbox-page"><p>生成IDE布局</p>
+<p><strong>Note:</strong> 兼容ie9+</p>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;div split-box&gt;
+   ...
+&lt;/div&gt;</pre>
+</div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="splitbox-directive-page splitbox-directive-splitbox-page"><h4 id="example_source">Source</h4>
+<div source-edit="demo" source-edit-deps="angular.js script.js" source-edit-html="index.html" source-edit-css="style.css" source-edit-js="script.js" source-edit-json="" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="index.html">
+<pre class="prettyprint linenums" ng-set-text="index.html" ng-html-wrap-loaded="demo angular.js script.js"></pre>
+<script type="text/ng-template" id="index.html">
+    <div ng-controller="demoCtrl" split-box="config" style="height: 400px; overflow: hidden;"></div>
+</script>
+</div>
+<div class="tab-pane" title="style.css">
+<pre class="prettyprint linenums" ng-set-text="style.css"></pre>
+<style type="text/css" id="style.css">
+   .split-box{
+       background: #43AC6A;
+       color: #fff;
+       border: 1px solid;
+       padding: 2px;
+   }
+
+   .animate div{
+       transition: .3s all;
+   }
+</style>
+</div>
+<div class="tab-pane" title="script.js">
+<pre class="prettyprint linenums" ng-set-text="script.js"></pre>
+<script type="text/ng-template" id="script.js">
+   angular.module('demo', ['splitbox'])
+
+   .controller('demoCtrl',
+   ['$scope',
+       function($scope){
+           $scope.config = {
+               direction: 'y',
+               barWidth: 10,
+               minSize: 10,
+               animateClass: 'animate',
+               boxs: [
+                   {id: 1, minSize: 20, isHide: false},
+                   {id: 3, parentId: 1},
+                   {id: 2, parentId: 1, size: 70},
+                   {id: 4},
+                   {id: 5, parentId: 2}
+               ]
+           };
+       }
+   ]);
+</script>
+</div>
+</div><h4 id="example_demo">Demo</h4>
+<div class="well doc-example-live animate-container" ng-embed-app="demo" ng-set-html="index.html" ng-eval-javascript="script.js"></div>
+</div></div>
+</div>

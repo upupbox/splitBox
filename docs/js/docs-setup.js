@@ -1,8 +1,17 @@
 NG_DOCS={
   "sections": {
-    "api": "api文档"
+    "api": "API"
   },
   "pages": [
+    {
+      "section": "api",
+      "id": "splitbox.class:splitBoxOptions",
+      "shortName": "splitBoxOptions",
+      "type": "object",
+      "moduleName": "splitbox",
+      "shortDescription": "配置参数",
+      "keywords": "animateclass api array bartemplate barwidth boolean boxs boxtemplate class direction exportname html isflat minsize number object resizebar scope split-bar split-box splitbox string"
+    },
     {
       "section": "api",
       "id": "splitbox.directive:splitBox",
@@ -10,7 +19,7 @@ NG_DOCS={
       "type": "directive",
       "moduleName": "splitbox",
       "shortDescription": "生成IDE布局",
-      "keywords": "$scope angular animate animateclass api background barwidth border boxs color config controller css demo democtrl direction directive div false fff function height hidden html ishide js minsize module ng-controller overflow padding parentid script size solid split-box splitbox style transition"
+      "keywords": "$scope angular animate animateclass api background barwidth border boxs class color config controller css demo democtrl direction directive div false fff function height hidden html ishide js minsize module ng-controller overflow padding parentid script size solid split-box splitbox splitboxoptions style transition"
     }
   ],
   "apis": {
@@ -27,7 +36,7 @@ NG_DOCS={
       "js/splitBox.min.js"
     ],
     "styles": [],
-    "title": "api文档",
+    "title": "splitBox",
     "html5Mode": false,
     "editExample": true,
     "navTemplate": false,

@@ -50,11 +50,18 @@ gulp.task('generateDocs', ['build'], function()
     var gulpDocs = require('gulp-ngdocs');
     var options = {
         scripts: ['splitBox.min.js'],
-        title: 'api文档',
+        title: 'splitBox',
         html5Mode: false
     };
 
-    return gulp.src('./src/splitBox.js')
+    return gulpDocs.sections(
+        {
+            api: {
+                glob: ['./src/splitBox.js'],
+                title: 'API',
+                api: true
+            }
+        })
         .pipe(gulpDocs.process(options))
         .pipe(gulp.dest('./docs'));
 })

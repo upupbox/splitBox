@@ -8,7 +8,8 @@
      * @ngdoc directive
      * @name splitbox.directive:splitBox
      * @element div
-     * @function
+     * @restrict A
+     * @param {Object} splitBox splitBox 的配置 {@link splitbox.class:splitBoxOptions splitBoxOptions}
      *
      * @description
      * 生成IDE布局
@@ -57,6 +58,16 @@
        </example>
      */
 
+
+    /**
+     * @ngdoc object
+     * @name splitbox.class:splitBoxOptions
+     *
+     * @description
+     * 配置参数
+     *
+     */
+
     .directive('splitBox',
     ['$compile', 'splitBox::utils', 
         function($compile,   utils){
@@ -65,14 +76,83 @@
                 restrict: 'A',
                 link: function(scope, element, attrs){
                     var config = {
+                        /**
+                         * @ngdoc string
+                         * @name exportName
+                         * @propertyOf splitbox.class:splitBoxOptions
+                         * @description
+                         * 设置暴露到`scope`上的方法的名称
+                         */
                         exportName: 'splitBox',
+                        /**
+                         * @ngdoc array
+                         * @name boxs
+                         * @propertyOf splitbox.class:splitBoxOptions
+                         * @description
+                         * 需要显示的boxs，类似树形结构
+                         */
                         boxs: [],
+                        /**
+                         * @ngdoc string
+                         * @name boxTemplate
+                         * @propertyOf splitbox.class:splitBoxOptions
+                         * @description
+                         * 默认的box的模板，当box没有设置template时，使用该模板，默认为：
+                         * ```html
+                         * <div class="split-box"></div>
+                         * ```
+                         */
                         boxTemplate: '<div class="split-box"></div>',
+                        /**
+                         * @ngdoc string
+                         * @name barTemplate
+                         * @propertyOf splitbox.class:splitBoxOptions
+                         * @description
+                         * resizeBar模板，所有的resizeBar都使用该模板生成，默认为：
+                         * ```html
+                         * <div class="split-bar"></div>
+                         * ```
+                         */
                         barTemplate: '<div class="split-bar"></div>',
+                        /**
+                         * @ngdoc string
+                         * @name direction
+                         * @propertyOf splitbox.class:splitBoxOptions
+                         * @description
+                         * 整个布局的一级box调整尺寸的方向，水平调整设置为：x，竖直调整设置为：y，默认水平
+                         */
                         direction: 'x',
+                        /**
+                         * @ngdoc number
+                         * @name barWidth
+                         * @propertyOf splitbox.class:splitBoxOptions
+                         * @description
+                         * 设置所有resizeBar的宽度
+                         */
                         barWidth: 10,
+                        /**
+                         * @ngdoc number
+                         * @name minSize
+                         * @propertyOf splitbox.class:splitBoxOptions
+                         * @description
+                         * 设置所有box默认的最小大小，可对单个box设置`minSize`覆盖全局设置
+                         */
                         minSize: 5,
+                        /**
+                         * @ngdoc boolean
+                         * @name isFlat
+                         * @propertyOf splitbox.class:splitBoxOptions
+                         * @description
+                         * 声明传入的boxs参数是数组还是对象，默认是数组
+                         */
                         isFlat: true,
+                        /**
+                         * @ngdoc string
+                         * @name animateClass
+                         * @propertyOf splitbox.class:splitBoxOptions
+                         * @description
+                         * 设置动画类名
+                         */
                         animateClass: ''
                     };
 

@@ -18,7 +18,7 @@
      * @example
        <example module="demo">
          <file name="index.html">
-             <div ng-controller="demoCtrl" split-box="config" style="height: 400px; overflow: hidden;"></div>
+             <div ng-controller="demoCtrl" split-box="config" style="height: 300px; overflow: hidden;"></div>
          </file>
          <file name="script.js">
             angular.module('demo', ['splitbox'])

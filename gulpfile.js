@@ -14,7 +14,7 @@ var _dist = './dist/js';
 
 gulp.task('serve', serve(
 {
-    root: ['docs', 'dist'],
+    root: ['docs'],
     port: 1234
 }));
 
@@ -45,7 +45,7 @@ gulp.task('coverage', ['unit_test'], function()
         .pipe(coveralls());
 })
 
-gulp.task('ngdocs', ['build'], function()
+gulp.task('generateDocs', ['build'], function()
 {
     var gulpDocs = require('gulp-ngdocs');
     var options = {
@@ -57,4 +57,13 @@ gulp.task('ngdocs', ['build'], function()
     return gulp.src('./src/splitBox.js')
         .pipe(gulpDocs.process(options))
         .pipe(gulp.dest('./docs'));
-});
+})
+
+gulp.task('ngdocs', ['generateDocs'], function()
+{
+    gulp
+        .src(_app)
+        .pipe(uglify())
+        .pipe(rename(_appMin))
+        .pipe(gulp.dest('./docs/js'));
+})

@@ -51,7 +51,11 @@ gulp.task('generateDocs', ['build'], function()
     var options = {
         scripts: ['splitBox.min.js'],
         title: 'splitBox',
-        html5Mode: false
+        startPage: 'api/splitbox',
+        image: 'ngdoc_assets/favicon.ico',
+        html5Mode: false,
+        styles: [ 'ngdoc_assets/main.css' ],
+        navTemplate: 'ngdoc_assets/nav.html'
     };
 
     return gulpDocs.sections(

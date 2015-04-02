@@ -27,7 +27,7 @@ NG_DOCS={
   },
   "__file": "_FAKE_DEST_/js/docs-setup.js",
   "__options": {
-    "startPage": "/api",
+    "startPage": "api/splitbox",
     "scripts": [
       "js/angular.min.js",
       "js/angular-animate.min.js",
@@ -35,13 +35,16 @@ NG_DOCS={
       "js/prettify.js",
       "js/splitBox.min.js"
     ],
-    "styles": [],
+    "styles": [
+      "css/main.css"
+    ],
     "title": "splitBox",
     "html5Mode": false,
     "editExample": true,
-    "navTemplate": false,
-    "navContent": "",
+    "navTemplate": "ngdoc_assets/nav.html",
+    "navContent": "<ul class=\"nav pull-right\">\n\t<li><a href=\"https://github.com/color-box/splitBox\"><i class=\"icon-github icon-white\"></i> Github</a></li>\n\t<li><a href=\"https://github.com/color-box\">Create by <img src=\"./img/favicon.ico\" style=\"width: 20px; height: 20px;padding-right:0;\"> colorbox</a></li>\n</ul>",
     "navTemplateData": {},
+    "image": "img/favicon.ico",
     "loadDefaults": {
       "angular": true,
       "angularAnimate": true,
@@ -51,7 +54,7 @@ NG_DOCS={
   },
   "html5Mode": false,
   "editExample": true,
-  "startPage": "/api",
+  "startPage": "api/splitbox",
   "scripts": [
     "angular.min.js",
     "angular-animate.min.js",

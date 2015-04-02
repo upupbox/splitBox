@@ -1,0 +1,61 @@
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container{
+    width: auto;
+    min-width: 600px;
+    max-width: 1200px;
+    padding-left: 20px;
+    padding-right: 80px;
+}
+
+img.pull-left{
+    display:none;
+}
+
+.row > .span9{
+    float: none;
+    width: auto;
+    margin-left: 260px;
+}
+
+a{
+    color: #43AC6A;
+}
+
+.navbar-inner{
+    background: #666;
+}
+
+.navbar .brand,
+.navbar .nav > li > a{
+    color: #fff;
+    text-shadow: none;
+}
+
+.navbar .nav > li > a:focus, 
+.navbar .nav > li > a:hover{
+    color: #ccc;
+}
+
+.navbar .nav > .active > a, 
+.navbar .nav > .active > a:hover, 
+.navbar .nav > .active > a:focus{
+    box-shadow: none;
+    color: #FFF;
+    background-color: #43AC6A;
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover, 
+.nav-list > .active > a:focus{
+    background-color: #43AC6A;
+}
+
+.form-search > ul.nav > li.module{
+    background-color: #eee;
+}
+
+ul.methods > li > h3, 
+ul.properties > li > h3, 
+ul.events > li > h3{
+    background-color: #eee;
+    font-family: inherit;
+}

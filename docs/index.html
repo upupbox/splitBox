@@ -32,6 +32,8 @@
       addTag('link', {rel: 'stylesheet', href: 'css/animations.css', type: 'text/css'});
 
       
+         addTag('link', {rel: 'stylesheet', href: 'css/main.css', type: 'text/css'}, sync);
+      
 
       
         addTag('script', {src: 'js/angular.min.js'}, sync);
@@ -83,6 +85,10 @@
       <div class="navbar-inner">
         <div class="container">
           
+            
+              <img class="pull-left" src="img/favicon.ico">
+            
+          
           
             <a  class="brand">splitBox</a>
           
@@ -91,7 +97,10 @@
               <a ng-href="{{url}}"><i class="icon-book icon-white"></i> {{name}}</a>
             </li>
           </ul>
-          
+          <ul class="nav pull-right">
+	<li><a href="https://github.com/color-box/splitBox"><i class="icon-github icon-white"></i> Github</a></li>
+	<li><a href="https://github.com/color-box">Create by <img src="./img/favicon.ico" style="width: 20px; height: 20px;padding-right:0;"> colorbox</a></li>
+</ul>
         </div>
       </div>
     </div>
